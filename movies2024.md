@@ -13,4 +13,5 @@ Peliculas que vi este año
 12. volver al futuro
 13. casadoras de aliens
 14. n cantidad que no anote
-15. El planeta salvaje
+15. pistola desnuda
+16. El planeta salvaje
