@@ -12,3 +12,5 @@ Peliculas que vi este año
 11. cuando acecha la maldad
 12. volver al futuro
 13. casadoras de aliens
+14. n cantidad que no anote
+15. El planeta salvaje
