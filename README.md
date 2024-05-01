@@ -37,6 +37,6 @@ You can contact me on the following platforms
 | [Instagram](https://www.instagram.com/mmppppss/) | Personal Content and interest |
 
 [![GitHub Streak](https://streak-stats.demolab.com?user=mmppppss&theme=gruvbox&hide_border=true&border_radius=1.4)](https://git.io/streak-stats)
-
+[![built with Codeium](https://codeium.com/badges/main)](https://codeium.com)
 
 **:)**
