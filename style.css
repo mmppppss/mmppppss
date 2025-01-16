@@ -1,0 +1,206 @@
+/*@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');*/
+
+:root {
+    /* Colores del tema Gruvbox */
+    --primary-color: #d79921; /* Amarillo (color primario) */
+    --secondary-color: #3c3836; /* Fondo secundario oscuro */
+    --background-color: #282828; /* Fondo oscuro principal */
+    --text-color: #ebdbb2; /* Texto claro */
+    --text-secondary-color: #a89984; /* Texto secundario claro */
+    --button-background: #b8bb26; /* Verde (color de los botones) */
+    --button-text-color: #282828; /* Texto de botones oscuro */
+    --button-hover-background: #98971a; /* Fondo de botones en hover */
+    --button-hover-background-dark: #79740e; /* Fondo de botones en hover más oscuro */
+    --input-background: #32302f; /* Fondo de los inputs */
+    --input-border: #7c6f64; /* Borde de los inputs */
+    --input-focus-border: #d79921; /* Borde de los inputs al foco */
+    --link-color: #83a598; /* Color de enlaces (verdes/azules) */
+    --link-hover-color: #b8bb26; /* Color de enlaces en hover (verde) */
+    --border-radius: 8px; /* Bordes redondeados */
+    --box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+	--disabled-opacity: 0.6; /* Opacidad para elementos deshabilitados */
+	--font: 'Jetbrains Mono','Fira Code', 'Courier New', monospace; /* Fuente monoespaciada */
+}
+::selection {
+	background-color: var(--input-focus-border);
+	color: var(--background-color);
+}
+body {
+	font-family: var(--font);
+	margin: 0;
+	background-color: var(--background-color);
+	color: var(--text-color);
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+
+/* Contenedor del botón */
+.menu-btn {
+	width: 30px;
+	height: 25px;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	background: transparent;
+	border: none;
+	padding: 0;
+	margin: 10px;
+	position: fixed;
+	transition: transform 0.3s ease;
+	z-index: 10;
+}
+
+.bar {
+	width: 25px;
+	height: 5px;
+	background-color: var(--button-background);
+	border-radius: 5px;
+	transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animación cuando el botón está activo */
+.menu-btn.open .bar:nth-child(1) {
+	transform: translateY(10px) rotate(45deg);
+}
+
+.menu-btn.open .bar:nth-child(2) {
+	opacity: 0; /* Hacer desaparecer la segunda barra */
+}
+
+.menu-btn.open .bar:nth-child(3) {
+	transform: translateY(-10px) rotate(-45deg);
+}
+
+.explorer {
+	width: 250px;
+	background-color: var(--background-color);
+	padding: 80px 20px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	overflow-y: auto;
+	transform: translateX(-100%);
+	transition: transform 0.3s ease;
+	z-index: 9;
+}
+
+.explorer.open {
+	transform: translateX(0);
+}
+
+/* Estilo para el contenido principal */
+.main {
+	margin: 0;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+/* Estilo del área del folio (editor) */
+.folio {
+	flex: 1;
+	background-color: var(--secondary-color);
+	overflow-y: auto;
+    overflow: hidden;
+	margin-bottom: 40px;
+}
+
+/* Navbar (barra fija en la parte inferior) */
+
+.navbar {
+	background-color: var(--background-color);
+	height: 40px;
+	color: var(--text-secondary-color);
+	align-items: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 10;
+}
+.navbar>div{
+	display: flex;
+	align-items: center;
+	height: 100%;
+	padding-left: 20px;
+	font-size: 0.8em;
+}
+.navbar>div.hide{
+	display: none;
+}
+/* Estilo para la barra de estado (lualine) */
+.state {
+}
+
+/* Estilo para la barra de comandos */
+.command {
+	color: var(--button-background);
+}
+.command>.cmd{
+	display: block ruby;
+	white-space: nowrap;
+	width: 100%;
+	color: var(--button-background);
+	border:none;
+	background-color: transparent;
+}
+.command>.cmd:focus {
+	outline: none;
+}
+
+a {
+	display: block;
+	color: var(--link-color);
+	text-decoration: none;
+	margin: 10px 0;
+}
+
+a:hover {
+	color: var(--link-hover-color);
+}
+
+.folio-content{
+	width:94%;
+	height:94%;
+	display: flex;
+	overflow: hidden;
+	align-items: center;
+	justify-content: center;
+	margin: 3%;
+}
+
+.slide {
+  display: none;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
+  filter: blur(10px); }
+
+/* Diapositiva activa */
+.slide.active {
+  display: block;
+  opacity: 1;
+transform: translateY(0);
+  filter: blur(0); 
+}
+
+/* Diapositiva que se mueve hacia arriba */
+.slide.up {
+  transform: translateY(-100%);
+  opacity: 0;
+  filter: blur(10px);
+}
+
+/* Diapositiva que se mueve hacia abajo */
+.slide.down {
+  transform: translateY(100%);
+  opacity: 0;
+  filter: blur(10px);
+}
+
