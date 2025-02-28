@@ -1,0 +1,115 @@
+.card{
+	box-shadow:var(--box-shadow);
+	border-radius: var(--border-radius);
+	background-color: var(--background-color);
+	width: 40%;
+	height: 65dvh;
+	margin: 20px;
+	text-align: center;
+	transition: transform 0.3s ease;
+	overflow: hidden;
+}
+
+.card img {
+	display: flex;
+	width: 84%;
+	height: 55%;
+	margin: 30px auto auto;
+	object-fit: cover; 
+	border-radius: 10px;
+}
+
+.card:hover {
+	transform: translateY(-10px);
+}
+.card p, .card h2 {
+	padding: 10px 30px;
+	margin:0px;
+}
+.infoCard{
+	font-size:0.9em;
+}
+
+.pic{
+	align-items:center;
+	display: flex;
+	flex-direction: column;
+}
+.info{
+	height: 30vh;
+	width: 50%;
+	margin: 0 40px 50px;
+}
+.profile-img {
+	width: 30vh;
+	height: 30vh;
+	border-radius: 50%;
+	margin-bottom: 20px;
+	object-fit: cover; 
+}
+
+.name {
+	font-size: 1.7em;
+	font-weight: bold;
+}
+
+.description {
+	font-size: 1.1em;
+}
+
+.social-links {
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+}
+
+.social-links a {
+	text-decoration: none;
+	color: var(--button-background);
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.social-links a:hover {
+	color: var(--button-hover-background-dark);
+}
+
+.contact {
+	margin-top: 20px;
+	font-size: 1.1em;
+}
+
+@media screen and (max-height: 500px) {
+	.card{
+		display: flex;
+	}
+	.card img {
+		width: 200px;
+		height: auto;
+		margin: 0px;
+		object-fit: cover; 
+		border-radius: 0;
+		border-top-left-radius: 10px;
+		border-bottom-left-radius: 10px;
+	}
+	.info{
+		font-size:0.8rem;
+	}
+}
+@media screen and (max-width: 768px) {
+	.card{
+		width: 80%;
+		height: 40vh;
+		margin: 20px;
+	}
+	.card img{
+
+	}
+	.info{
+		text-align: center;
+	}
+	.profile-img {
+		width: 20vh;
+		height: 20vh;
+	}
+}

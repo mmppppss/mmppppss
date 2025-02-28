@@ -1,0 +1,44 @@
+/* Navbar (barra fija en la parte inferior) */
+
+.navbar {
+	background-color: var(--background-color);
+	height: 40px;
+	color: var(--text-secondary-color);
+	align-items: center;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 10;
+}
+.navbar>div{
+	display: flex;
+	align-items: center;
+	height: 100%;
+	padding-left: 20px;
+	font-size: 0.8em;
+}
+.navbar>div.hide{
+	display: none;
+}
+/* Estilo para la barra de estado (lualine) */
+.state {
+}
+
+/* Estilo para la barra de comandos */
+.command {
+	color: var(--button-background);
+}
+.command>.cmd{
+	font-family: monospace;
+	display: block ruby;
+	white-space: nowrap;
+	width: 100%;
+	color: var(--button-background);
+	border:none;
+	background-color: transparent;
+}
+.command>.cmd:focus {
+	outline: none;
+}
+
+

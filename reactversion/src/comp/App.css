@@ -1,0 +1,74 @@
+/*@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');*/
+
+:root {
+    /* Colores del tema Gruvbox */
+    --primary-color: #d79921; /* Amarillo (color primario) */
+    --secondary-color: #3c3836; /* Fondo secundario oscuro */
+    --background-color: #282828; /* Fondo oscuro principal */
+    --text-color: #ebdbb2; /* Texto claro */
+    --text-secondary-color: #a89984; /* Texto secundario claro */
+    --button-background: #b8bb26; /* Verde (color de los botones) */
+    --button-text-color: #282828; /* Texto de botones oscuro */
+    --button-hover-background: #98971a; /* Fondo de botones en hover */
+    --button-hover-background-dark: #79740e; /* Fondo de botones en hover más oscuro */
+    --input-background: #32302f; /* Fondo de los inputs */
+    --input-border: #7c6f64; /* Borde de los inputs */
+    --input-focus-border: #d79921; /* Borde de los inputs al foco */
+    --link-color: #83a598; /* Color de enlaces (verdes/azules) */
+    --link-hover-color: #b8bb26; /* Color de enlaces en hover (verde) */
+    --border-radius: 8px; /* Bordes redondeados */
+    --box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+	--disabled-opacity: 0.6; /* Opacidad para elementos deshabilitados */
+	--font: 'Jetbrains Mono','Fira Code', 'Courier New', monospace; /* Fuente monoespaciada */
+}
+::selection {
+	background-color: var(--input-focus-border);
+	color: var(--background-color);
+}
+body {
+	font-family: var(--font);
+	margin: 0;
+	background-color: var(--background-color);
+	color: var(--text-color);
+	display: flex;
+	flex-direction: column;
+	height: 100dvh;
+}
+
+a {
+	display: block;
+	color: var(--link-color);
+	text-decoration: none;
+	margin: 10px 0;
+}
+
+a:hover {
+	color: var(--link-hover-color);
+}
+
+/* Estilo para el contenido principal */
+.main {
+	height: 100dvh;
+	background-color: var(--secondary-color);
+}
+
+.container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width:100%;
+	height: 100dvh;
+}
+.container.i1{background-color: var(--input-background);}
+.container.i2{background-color: var(--secondary-color);}
+
+@media screen and (max-width: 768px) {
+	body{
+		font-size: 0.7em;
+	}
+	.container{
+		flex-direction: column;
+		padding-top: 40px;
+	}
+}
+
