@@ -4,23 +4,40 @@ const state = document.querySelector(".state")
 const showExplorer = document.querySelector("#showExplorer")
 const slides = document.querySelectorAll(".slide")
 const helpDiv = document.querySelector(".help")
-showExplorer.addEventListener("click", ()=>{
-	showExplorer.classList.toggle("open");
-	explorer.classList.toggle("open");
-});
+const navbar = document.querySelector(".navbar")
 
-document.addEventListener("keydown", (e)=>{
-	if(e.key == ":"){
+const commands={
+	explorer:()=>{
+		showExplorer.classList.toggle("open");
+		explorer.classList.toggle("open");
+	},
+	commandBar: ()=>{
 		command.classList.toggle("hide");
 		state.classList.toggle("hide");
 		var cmd = document.querySelector("#cmd")
 		cmd.focus();
-		cmd.innerText= ""
-	}
-	if(e.key == "Escape"){
+		cmd.value=""
+	},
+	commandBarHide:()=>{
 		command.classList.add("hide");
 		state.classList.remove("hide");
 	}
+}
+showExplorer.addEventListener("click",commands.explorer);
+
+document.addEventListener("keydown", (e)=>{
+	if(e.key == ":" || e.key == "/"){
+		commands.commandBar()
+	}
+	if(e.key == "Escape"){
+		commands.commandBarHide();
+	}
+
+});
+
+navbar.addEventListener("click", ()=>{
+	commands.commandBar()
+	cmd.value=":"
 });
 let currentSlide = 0
 
@@ -63,7 +80,6 @@ document.addEventListener('keydown', (e) => {
 	}
 });
 
-// Evento de scroll
 document.addEventListener('wheel', (e) => {
 	if (e.deltaY > 0) {
 		changeSlide(1);	
@@ -71,30 +87,97 @@ document.addEventListener('wheel', (e) => {
 		changeSlide(-1);
 	}
 });
+let startX = 0;
+let startY = 0;
+let isScrolling = false;
 
+document.addEventListener('touchstart', (e) => {
+	e.preventDefault(); 
+	const touch = e.touches[0];
+	startX = touch.clientX;
+	startY = touch.clientY;
+	isScrolling = false;
+}, false);
 
+document.addEventListener('touchmove', (e) => {
+	e.preventDefault(); 
 
+	const touch = e.touches[0];
+	const diffX = touch.clientX - startX;
+	const diffY = touch.clientY - startY;
+	const threshold = 50;
+
+	if (!isScrolling) {
+		if (Math.abs(diffX) > threshold && Math.abs(diffX) > Math.abs(diffY)) {
+			isScrolling = true;  
+			if (diffX > 0) {
+				changeSlide(-1);
+			} else {
+				changeSlide(1);
+			}
+		}
+		else if (Math.abs(diffY) > threshold && Math.abs(diffY) > Math.abs(diffX)) {
+			isScrolling = true;
+			if (diffY > 0) {
+				changeSlide(-1);
+			} else {
+				changeSlide(1);
+			}
+		}
+	}
+}, false);
+
+document.addEventListener('touchend', () => {
+	startX = 0;
+	startY = 0;
+}, false);
 cmd.addEventListener('keydown', function(event) {
 	if (event.key === 'Enter') {
-		event.preventDefault(); 
-		text = cmd.innerText.replace(":","");
-		if(["ex", "explore"].includes(text.toLowerCase())){
+		event.preventDefault();
+		if(cmd.value.startsWith("/")){
+			text = cmd.value.replace("/","");
+			//removeHighlights()
+			//searchAndHighlight(text)
+			commands.commandBarHide()
 		}
-		switch (text) {
-			case "ex":
-			case "explore":
-				showExplorer.classList.toggle("open");
-				explorer.classList.toggle("open");
-				break;
-			case "help":
-			case "h":
-				changeSlide("h");
-				break;
-			default:
-				break;
+		if(cmd.value.startsWith(":")){
+			text = cmd.value.replace(":","");
+			switch (text) {
+				case "ex":
+				case "explore":
+					commands.explorer();
+					break;
+				case "help":
+				case "h":
+					changeSlide("h");
+					break;
+				default:
+					break;
+			}
 		}
-		cmd.innerText = ""
-		command.classList.add("hide");
-		state.classList.remove("hide");
+		cmd.value = ""
+		commands.commandBarHide();
 	}
 });
+
+const searchAndHighlight =(word)=> {
+	removeHighlights()
+
+	const bodyText = document.body;
+
+	const regex = new RegExp(`(${word})`, 'gi');
+	const match = bodyText.innerHTML.match(regex);
+	console.log(match)
+	// Creamos un span alrededor de la palabra encontrada
+	const span = document.createElement('span');
+	span.className = 'highlight';
+	span.textContent = match[0];
+	bodyText.innerHTML = bodyText.innerHTML.replaceAll(match[0], span.outerHTML);
+}
+const removeHighlights = ()=>{
+	const highlighted = document.querySelectorAll('.highlight');
+	highlighted.forEach(element => {
+		a = element.innerText
+		element.classList.remove('highlight');
+	});
+}

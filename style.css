@@ -32,7 +32,7 @@ body {
 	color: var(--text-color);
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
+	height: 100dvh;
 }
 
 
@@ -142,6 +142,7 @@ body {
 	color: var(--button-background);
 }
 .command>.cmd{
+	font-family: monospace;
 	display: block ruby;
 	white-space: nowrap;
 	width: 100%;
@@ -175,32 +176,141 @@ a:hover {
 }
 
 .slide {
-  display: none;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
-  filter: blur(10px); }
+	display: none;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
+	filter: blur(10px); 
+	justify-content:center;
+	align-items: center;
+}
+
 
 /* Diapositiva activa */
 .slide.active {
-  display: block;
-  opacity: 1;
-transform: translateY(0);
-  filter: blur(0); 
+	display: flex;
+	opacity: 1;
+	transform: translateY(0);
+	filter: blur(0); 
 }
 
 /* Diapositiva que se mueve hacia arriba */
 .slide.up {
-  transform: translateY(-100%);
-  opacity: 0;
-  filter: blur(10px);
+	transform: translateY(-100%);
+	opacity: 0;
+	filter: blur(10px);
 }
 
 /* Diapositiva que se mueve hacia abajo */
 .slide.down {
-  transform: translateY(100%);
-  opacity: 0;
-  filter: blur(10px);
+	transform: translateY(100%);
+	opacity: 0;
+	filter: blur(10px);
 }
 
+.card{
+	box-shadow:var(--box-shadow);
+	border-radius: var(--border-radius);
+	background-color: var(--background-color);
+	width: 40%;
+	height: 65vh;
+	margin: 20px;
+	text-align: center;
+	transition: transform 0.3s ease;
+	overflow: hidden;
+}
+
+.card img {
+	display: flex;
+	width: 84%;
+	height: 55%;
+	margin: 30px auto auto;
+	object-fit: cover; 
+	border-radius: 10px;
+}
+
+.card:hover {
+	transform: translateY(-10px);
+}
+.highlight {
+	background-color: var(--input-focus-border);
+	color: var(--background-color);
+}
+
+.pic{
+	align-items:center;
+	display: flex;
+	flex-direction: column;
+}
+.info{
+	height: 30vh;
+	width: 50%;
+	margin: 0 40px 50px;
+}
+.profile-img {
+	width: 30vh;
+	height: 30vh;
+	border-radius: 50%;
+	margin-bottom: 20px;
+	object-fit: cover; 
+}
+
+.name {
+	font-size: 1.7em;
+	font-weight: bold;
+}
+
+.description {
+	font-size: 1.1em;
+}
+
+.social-links {
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+}
+
+.social-links a {
+	text-decoration: none;
+	color: var(--button-background);
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.social-links a:hover {
+	color: var(--button-hover-background-dark);
+}
+
+.contact {
+	margin-top: 20px;
+	font-size: 1.1em;
+}
+
+/* Media query para dispositivos pequeños (móviles) */
+@media screen and (max-width: 768px) {
+	body{
+		font-size: 0.7em;
+	}
+	.slide.active {
+		flex-direction: column;
+		padding-top: 40px;
+	}
+	.card{
+		width: 80%;
+		height: 40vh;
+		margin: 20px;
+	}
+	.card img{
+
+	}
+	.info{
+		text-align: center;
+	}
+	.profile-img {
+		width: 20vh;
+		height: 20vh;
+	}
+}

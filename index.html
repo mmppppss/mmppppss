@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width">
+		<meta name="viewport" content="width=device-width initial-scale=1">
 		<title>Marthel Pedro Pozo Soliz | Portafolio</title>
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="main" charset="utf-8">
 	</head>
@@ -22,13 +22,79 @@
 				<div class="bar"></div>
 			</button>
 			<div class="folio-content">
-				<div class="slide active">jola</div>
-				<div class="slide">mundo</div>
-				<div class="slide">que tal</div>
-				<div class="slide">queso</div>
+				<div class="slide active">
+					<div class="pic">
+						<img src="./mpsweb.png" alt="Mi Foto" class="profile-img">
+						<div class="social-links">
+							<a href="https://github.com/TuUsuario" target="_blank" title="GitHub">
+								<img src="github-icon.svg" alt="GitHub" width="24" height="24">
+							</a>
+							<a href="https://www.linkedin.com/in/TuPerfil" target="_blank" title="LinkedIn">
+								<img src="linkedin-icon.svg" alt="LinkedIn" width="24" height="24">
+							</a>
+							<a href="mailto:ppozosoliz@gmail.com" title="Correo">
+								<img src="email-icon.svg" alt="Email" width="24" height="24">
+							</a>
+						</div>
+					</div>
+					<div class="info">
+						<p class="name">Marthel Pedro Pozo Soliz</p>
+						<p class="description">Estudiante de Ingeniería Informática y desarrollador backend. Me enfoco en crear soluciones eficientes y escalables, especialmente en proyectos de software libre.</p>
+					</div>
+
+				</div>
+				<div class="slide">
+					<div class="card">
+						<img src="./img.png" alt="">
+						<h2>Proyecto</h2>
+						<p>Descripcion  de py</p>
+					</div>
+					<div class="card">
+						<img src="./je.png" alt="">
+						<h2>Sistema Joven Esperanza</h2>
+						<p>Sistema web de gestion de estudiantes para la ONG Joven Esperanza</p>
+					</div>
+				</div>
+				<div class="slide">
+					<div class="card">
+						<img src="./mpsweb.png" alt="">
+						<h2>MpsWEB: Blog</h2>
+						<p>Blog Personal usando ReactJS, Php y MYSQL</p>
+					</div>
+					<div class="card">
+						<img src="./cine.png" alt="">
+						<h2>CineLibre</h2>
+						<p>Web de streaming de peliculas con db csv y hecha en flask</p>
+					</div>
+				</div>
+				<div class="slide">
+					<div class="card">
+						<img src="./todofirebase.png" alt="">
+						<h2>ToDo list</h2>
+						<p>App de practica con firebase realtime database y firebase hosting</p>
+					</div>
+					<div class="card">
+						<img src="./chatfirebase.png" alt="">
+						<h2>Mensajeria Firebase</h2>
+						<p>App de Mensajeria usando Firebase con login y multiusuario</p>
+					</div>
+				</div>
+				<div class="slide">
+					habilidades
+					<ul>
+						<li>Python</li>
+						<li>Java</li>
+						<li>Php</li>
+						<li>MySQL</li>
+						<li>PostGres</li>
+					</ul>
+				</div>
 				<div class="slide help">
-					<h2>Help</h2>
-					:explore to see the menu
+					<div>
+						<h2>Help</h2>
+						<p>:ex or :explore to see the menu</p>
+						:h or :help to see this
+					</div>
 				</div>
 			</div>
 			<!-- Aqui todo el contenido scrollable-->
@@ -36,7 +102,9 @@
 		<div class="navbar">
 			<!-- Aqui la barra de abajo no movible-->
 			<div class="state">normal</div>
-			<div class="command hide"><span type="text" id="cmd" class="cmd" autofocus contenteditable="true"></span></div>
+			<div class="command hide">
+				<input type="text" id="cmd" class="cmd" autofocus contenteditable="true"/>
+			</div>
 		</div>
 	</div>
 	<script src="vim.js"></script>
