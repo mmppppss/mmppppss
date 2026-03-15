@@ -79,6 +79,4 @@ https://github.com/mmppppss
 
 ---
 
-## Snake
-
 ![snake](https://raw.githubusercontent.com/mmppppss/mmppppss/output/github-contribution-grid-snake.svg)
