@@ -64,7 +64,7 @@ Statistics
 Activity
 --------
 
-![graph](https://github-readme-activity-graph.vercel.app/graph?username=mmppppss&theme=github-compact)
+![graph](https://github-readme-activity-graph.vercel.app/graph?username=mmppppss&theme=gruvbox)
 
 
 Visitors
