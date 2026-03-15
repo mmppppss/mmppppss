@@ -1,82 +1,80 @@
-# mmppppss
+========
+mmppppss
+========
 
-Backend • Systems • Linux • Optimization
+Backend / Systems / Linux
 
-[Blog](http://mmppppss.rf.gd) | [Portfolio](https://mpps.qzz.io)
+Developer focused on backend services, operating systems environments,
+automation tools and performance-oriented software.
 
-Fullstack developer focused on backend, operating systems and high-performance
-utility software.
+Primary environment: Arch Linux.
 
-Main environment: Linux / Arch Linux
+Links
+-----
 
----
+blog:
+http://mmppppss.rf.gd
 
-## Stack
+portfolio:
+https://mpps.qzz.io
 
-![Linux](https://img.shields.io/badge/Linux-Arch-black)
-![Node](https://img.shields.io/badge/NodeJS-backend-green)
-![PHP](https://img.shields.io/badge/PHP-API-blue)
-![Python](https://img.shields.io/badge/Python-tools-yellow)
-![Java](https://img.shields.io/badge/Java-desktop-red)
-![MySQL](https://img.shields.io/badge/MySQL-database-orange)
-![Bash](https://img.shields.io/badge/Bash-shell-lightgrey)
+email:
+me@mpps.qzz.io
 
-Main interests:
-
-- Backend architecture
-- Operating systems
-- Performance optimization
-- Linux distributions
-- Automation tools
-- Cryptography / security
-
----
-
-## Projects
-
-- Ulinux → University GNU/Linux distro based on Arch
-- WhatsApp Bot → automation bot in Node.js
-- Markdown Editor → fast editor in Java
-- sgmail → mail client in Python
-
-More projects:
-
+github:
 https://github.com/mmppppss
 
----
 
-## Contact
+Focus
+-----
 
-| Platform | Link |
-|----------|--------|
-| Email | me@mpps.qzz.io |
-| Blog | http://mmppppss.rf.gd |
-| Portfolio | https://mpps.qzz.io |
-| GitHub | https://github.com/mmppppss |
-| WhatsApp | https://wa.me/59172688979 |
+- backend architecture
+- operating systems
+- linux environments
+- performance optimization
+- automation tools
+- cryptography (learning)
 
----
 
-## Stats
+Projects
+--------
 
-![](https://github-readme-stats.vercel.app/api?username=mmppppss&theme=gruvbox&show_icons=true&hide_border=true)
+Ulinux
+    University GNU/Linux distribution based on Arch Linux
 
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=mmppppss&layout=compact&theme=gruvbox&hide_border=true)
+bot
+    WhatsApp automation bot implemented in Node.js
 
-![](https://streak-stats.demolab.com?user=mmppppss&theme=gruvbox&hide_border=true)
+markdown-editor
+    Fast markdown editor written in Java
 
----
+sgmail
+    Email client implemented in Python
 
-## Activity
 
-![](https://github-readme-activity-graph.vercel.app/graph?username=mmppppss&theme=github-compact)
+Statistics
+----------
 
----
+![stats](https://github-readme-stats.vercel.app/api?username=mmppppss&theme=gruvbox&hide_border=true&show_icons=true)
 
-## Visitors
+![langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mmppppss&layout=compact&theme=gruvbox&hide_border=true)
 
-![](https://komarev.com/ghpvc/?username=mmppppss&color=blue)
+![streak](https://streak-stats.demolab.com?user=mmppppss&theme=gruvbox&hide_border=true)
 
----
+
+Activity
+--------
+
+![graph](https://github-readme-activity-graph.vercel.app/graph?username=mmppppss&theme=github-compact)
+
+
+Visitors
+--------
+
+![](https://komarev.com/ghpvc/?username=mmppppss)
+
+
+Contribution Graph
+------------------
 
 ![snake](https://raw.githubusercontent.com/mmppppss/mmppppss/output/github-contribution-grid-snake.svg)
